@@ -7,7 +7,7 @@ on:
       - main
 permissions:
   id-token: write
-  contents: read 
+  packages: write
   #pull_request:
     #types: [labeled]
 

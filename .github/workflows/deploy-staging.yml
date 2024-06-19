@@ -96,6 +96,10 @@ jobs:
           login-server: ${{env.IMAGE_REGISTRY_URL}}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Sleep for 1 minutes
+        run: sleep 60s
+        shell: bash
 
       - name: Deploy web app container
         uses: azure/webapps-deploy@v3

@@ -6,7 +6,8 @@ on:
     branches:
       - main
 permissions:
-  id-token: write  
+  id-token: write
+  contents: read 
   #pull_request:
     #types: [labeled]
 

@@ -1,13 +1,14 @@
 name: Configure Azure environment
 
 on:
-#  pull_request:
-#    types: [labeled]
-  workflow_dispatch:
-  push:
-    branches:
-      - staging-workflow-1
+  pull_request:
+    types: [labeled]
 
+permissions:
+  id-token: write
+  packages: write
+  contents: read
+  
 env:
   IMAGE_REGISTRY_URL: ghcr.io
   AZURE_RESOURCE_GROUP: cd-with-actions

@@ -7,6 +7,12 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  id-token: write
+  packages: write
+  contents: read
+  
 env:
   IMAGE_REGISTRY_URL: ghcr.io
   AZURE_RESOURCE_GROUP: cd-with-actions

@@ -102,10 +102,6 @@ jobs:
         with:
           app-name: ${{env.AZURE_WEBAPP_NAME}}
           images: ${{env.IMAGE_REGISTRY_URL}}/${{ github.repository }}/${{env.DOCKER_IMAGE_NAME}}:${{ github.sha }}
-          package: app-artifact
-          type: ZIP
-          clean: false
-          restart: true
 
 
       - name: Azure logout via Azure CLI

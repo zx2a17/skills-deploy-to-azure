@@ -97,6 +97,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - uses: nick-fields/retry@v3
+        with:
+          timeout_seconds: 15
+          max_attempts: 5
+          command: npm run some-typically-fast-script
+
       - name: Deploy web app container
         uses: azure/webapps-deploy@v3
         with:

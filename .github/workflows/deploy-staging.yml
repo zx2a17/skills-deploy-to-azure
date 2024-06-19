@@ -1,8 +1,14 @@
 name: Deploy to staging
 
 on:
-  pull_request:
-    types: [labeled]
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  
+  #pull_request:
+    #types: [labeled]
+
 
 env:
   IMAGE_REGISTRY_URL: ghcr.io
@@ -15,7 +21,7 @@ env:
 
 jobs:
   build:
-    if: contains(github.event.pull_request.labels.*.name, 'staging')
+    #if: contains(github.event.pull_request.labels.*.name, 'staging')
 
     runs-on: ubuntu-latest
 

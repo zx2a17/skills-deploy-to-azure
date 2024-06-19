@@ -15,7 +15,7 @@ permissions:
 
 env:
   IMAGE_REGISTRY_URL: ghcr.io
-  ###############################################
+  ############################################## 
   ### Replace <username> with GitHub username ###
   ###############################################
   DOCKER_IMAGE_NAME: zx2a17-azure-ttt
@@ -24,7 +24,7 @@ env:
 
 jobs:
   build:
-    #if: contains(github.event.pull_request.labels.*.name, 'staging')
+    if: contains(github.event.pull_request.labels.*.name, 'stage')
 
     runs-on: ubuntu-latest
 
